@@ -4,19 +4,23 @@ public class Stack {
     private int capacity;
     private int expandCapacity = 2;
     private String[] stack;
+    private int top = -1;
    
+    //init stack with default capacity
     public  Stack (){
        capacity = 2;
        this.stack = new String[capacity];
     
     }
 
+    //init stack with specific capacity
     public Stack(int size) {
         this.capacity = size;
         this.stack = new String[capacity];
        
     }
 
+    //init stack with specific capacity and expand capacity
     public Stack (int size, int expandCapacity){
         this.capacity = size;
         this.expandCapacity = expandCapacity;
@@ -25,15 +29,13 @@ public class Stack {
 
 
 
-  
-
-
     public void push(String item) {
         if (item == null) {
             throw new IllegalArgumentException();
         }
-
         expandStackCapacity();
+        stack[++top] = item;
+
     
 
     }
@@ -54,7 +56,7 @@ public class Stack {
     }
 
     public String peek() {
-        return null;
+        return stack[top];
     }
 
     public String pop() {
