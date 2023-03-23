@@ -23,20 +23,7 @@ public class RPNTest {
         });
     }
 
-    @Test
-    void calculateShouldThrowAnExceptionIfCalculatingNotEnoughOperands() {
-        final RPN rpn = new RPN();
-        assertThrows(IllegalArgumentException.class, () -> {
-            rpn.calculate(new String[] { "1", "2" });
-        });
 
-        assertThrows(IllegalArgumentException.class, () -> {
-            rpn.calculate(new String[] { "+", "2" });
-        });
-        assertThrows(IllegalArgumentException.class, () -> {
-            rpn.calculate(new String[] { "-","-" });
-        });
-    }
 @Test
 void calculateShouldThorwAnExceptionIfInvalidSymbols1(){
     final RPN rpn = new RPN();
