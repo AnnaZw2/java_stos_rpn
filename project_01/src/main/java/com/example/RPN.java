@@ -4,7 +4,7 @@ public class RPN {
 
     Stack stack = new Stack();
 
-    public int calculate(String[] expression) {
+    private Stack parse( String[] expression){
         if (expression == null || expression.length == 0) {
             throw new IllegalArgumentException();
         }
@@ -21,6 +21,13 @@ public class RPN {
 
         }
 
+        return stack;
+
+    }
+
+    public int calculate(String[] expression) {
+        parse(expression);
+       
         while (stack.size() > 1) {
             String operator = stack.pop();
             String operand2 = stack.pop();
