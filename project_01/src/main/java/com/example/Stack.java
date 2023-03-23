@@ -51,16 +51,25 @@ public class Stack {
     }
 
     public Boolean isEmpty() {
-
-        return true;
+        if (top == -1) {
+            return true;
+        }
+        return false;
     }
 
     public String peek() {
+        if (isEmpty()) {
+            return null;
+        }
         return stack[top];
     }
 
     public String pop() {
-        return null;
+        if (isEmpty()) {
+            throw new IllegalStateException();
+        }
+
+        return stack[top--];
     }
 
     public int length() {
