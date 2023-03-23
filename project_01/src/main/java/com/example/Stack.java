@@ -72,8 +72,14 @@ public class Stack {
         return stack[top--];
     }
 
-    public int length() {
+    //return the length of the stack
+    public int getCapacity() {
         return stack.length;
+    }
+
+    //return the number od elements in the stack
+    public int size (){
+        return top + 1;
     }
 
 }

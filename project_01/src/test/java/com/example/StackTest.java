@@ -42,7 +42,7 @@ public class StackTest {
     void stackInitializedWithSpecificLengthShoulHaveThisLength() {
         final int size = 2;
         final Stack stack = new Stack(size);
-        assertTrue(stack.length() == size);
+        assertTrue(stack.getCapacity() == size);
 
     }
 
@@ -54,7 +54,7 @@ public class StackTest {
         stack.push("1");
         stack.push("2");
         stack.push("3");
-        assertTrue(stack.length() == size + expandCapacity);
+        assertTrue(stack.getCapacity() == size + expandCapacity);
     }
 
     // Peek
@@ -94,7 +94,7 @@ public class StackTest {
     @Test
     void lengthShouldReturnLengthOfStack() {
         final Stack stack = new Stack(3);
-        assertTrue(stack.length() == 3);
+        assertTrue(stack.getCapacity() == 3);
 
     }
 
@@ -107,7 +107,7 @@ public class StackTest {
         stack.push("2");
         stack.push("3");
         stack.push("4");
-        assertTrue(stack.length() == size + expandCapacity);
+        assertTrue(stack.getCapacity() == size + expandCapacity);
 
     }
 
