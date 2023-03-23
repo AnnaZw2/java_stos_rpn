@@ -9,8 +9,10 @@ public class RPNTest {
     @Test
     void calculateShouldReturnZeroIfExpressionIsEmpty() {
         final RPN rpn = new RPN();
-        final int result = rpn.calculate(new String[] {});
-        assertTrue(result == 0);
+     
+        assertThrows(IllegalArgumentException.class, () -> {
+            rpn.calculate(new String[] {});
+        });
     }
 
     @Test
